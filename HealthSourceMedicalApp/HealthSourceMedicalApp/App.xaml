@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthSourceMedicalApp.App">
+	<Application.Resources>
+		<ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#c63d2a</Color>
+            <Color x:Key="NavigationBar">#6d6e70</Color>
+            
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="{StaticResource NavigationBar}" />
+            </Style>
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>

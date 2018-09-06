@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthSourceMedicalApp.Views.StartupPage"
+             xmlns:vm="clr-namespace:HealthSourceMedicalApp.ViewModels"
+             BackgroundColor="#ffffff"
+             Title="{Binding Title}">
+    <ContentPage.Content Title="Register">
+        <ScrollView>
+            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout IsVisible="{Binding ShowForm}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                        <ScrollView>
+                        <Frame CornerRadius="10" OutlineColor="#99ce3a2a" Padding="0" Margin="20, 15, 15, 20">
+                            
+                            <StackLayout Orientation="Vertical" Padding="10" >
+                                <Label Text="HeathSource Medical" TextColor="#ce3a2a" FontSize="Medium" Margin="8, 8" XAlign="Center"/>
+                                <Label Text="Employee Assistance Program" TextColor="#ce3a2a" Margin="4, 4" FontAttributes="Bold" FontSize="Medium" XAlign="Center"/>
+                                <Label Text="Making a commitment to your well-being in the office" Margin="3, 3" FontSize="Small" XAlign="Center"/>
+                                <StackLayout Orientation="Vertical" Margin="8, 8" Spacing="20">
+                                    <Entry x:Name="FirstName" Placeholder="First Name" Text="{Binding FirstName}" PlaceholderColor="Silver" HeightRequest="40" TextColor="#565558"/>
+                                    <Entry x:Name="LastName" Placeholder="Last Name" Text="{Binding LastName}" PlaceholderColor="Silver" HeightRequest="40" TextColor="#565558"/>
+                                    <Entry x:Name="IDNumber" Placeholder="ID Number" Text="{Binding IDNumber}" PlaceholderColor="Silver" HeightRequest="40" TextColor="#565558"/>
+                                    <Entry x:Name="PhoneNumber" Placeholder="Phone Number" Text="{Binding PhoneNumber}" PlaceholderColor="Silver" HeightRequest="40" TextColor="#565558"/>
+                                    <Entry x:Name="Email" Placeholder="Email" Text="{Binding Email}"  PlaceholderColor="Silver" HeightRequest="40" Keyboard="Email" TextColor="#565558"/>
+                                    <Entry x:Name="Employer" Placeholder="Employer" Text="{Binding Employer}" PlaceholderColor="Silver" HeightRequest="40" TextColor="#565558"/>
+                                        <Label Text="Date Of Birth"></Label>
+                                    <DatePicker  x:Name="DOB" MinimumDate="1/1/1948" MaximumDate="{Binding MaxDOB}" Date="{Binding DOB}" TextColor="#565558" Format="MMMM dd, yyyy" />
+                                        <Label Text="Gender"/>
+                                    <Picker x:Name="Gender" SelectedItem="{Binding Gender}" TextColor="#565558">
+                                            <Picker.Items>
+                                                <x:String>Female</x:String>
+                                                <x:String>Male</x:String>
+                                            </Picker.Items>
+                                    </Picker>
+                                    <Button Command="{Binding RegisterCommand}" CornerRadius="7" Text="Register" TextColor="White"  
+                                        FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                                        BackgroundColor="#ce3a2a" />
+                                </StackLayout>
+                               
+                            </StackLayout>
+
+                        </Frame>
+                        </ScrollView>
+                </StackLayout>
+
+                <StackLayout IsVisible="{Binding ShowRegistrationProgress}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <ScrollView>
+                        <Frame CornerRadius="10" OutlineColor="#99ce3a2a" Padding="0" Margin="20, 15, 15, 20">
+
+                            <StackLayout Orientation="Vertical" Padding="10" >
+                                <Label Text="HeathSource Medical" TextColor="#ce3a2a" FontSize="Large" Margin="8, 8" XAlign="Center"/>
+                                <Label Text="Employee Assistance Program" TextColor="#ce3a2a" Margin="4,4" FontAttributes="Bold" FontSize="Medium" XAlign="Center"/>
+                                
+                                <Label Text="Please be patient wait we saved your information." IsVisible="{Binding IsBusy}" Margin="3,3" FontSize="Small" XAlign="Center"/>
+                                <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="#ce3a2a" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                
+                                <Label Text="Your account was registered Successfully." IsVisible="{Binding ShowGetStarted}" Margin="3,3" FontSize="Small" XAlign="Center"/>
+                                <Button Command="{Binding GetStartedCommand}" IsVisible="{Binding ShowGetStarted}" CornerRadius="7" Text="Get Started" Margin="18, 18" TextColor="White"  
+                                        FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                                        BackgroundColor="#ce3a2a" />
+                            </StackLayout>
+
+                        </Frame>
+                    </ScrollView>
+                </StackLayout>
+
+                <!--<StackLayout IsVisible="{Binding IsBusy}" Padding="56" BackgroundColor="#99ffffff"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="#80ce3a2a" HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="CenterAndExpand"/>
+
+                    <Label Text="Saving..." HorizontalOptions="Center" TextColor="#ce3a2a"/>
+
+                </StackLayout>-->
+
+            </AbsoluteLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<StackLayout >
+            <ScrollView>
+            
+            <Frame CornerRadius="10" OutlineColor="Silver" Padding="0" Margin="20, 15, 15, 20">
+            <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+                   <StackLayout Orientation="Vertical" Spacing="10">
+                        <Entry x:Name="FirstName" Placeholder="First Name" Text="{Binding FirstName}" PlaceholderColor="Silver" HeightRequest="40" TextColor="Blue"/>
+                        <Entry x:Name="LastName" Placeholder="Last Name" Text="{Binding LastName}" PlaceholderColor="Silver" HeightRequest="40" TextColor="Blue"/>
+                        <Entry x:Name="IDNumber" Placeholder="ID Number" Text="{Binding IDNumber}" PlaceholderColor="Silver" HeightRequest="40" TextColor="Blue"/>
+                        <Entry x:Name="PhoneNumber" Placeholder="Phone Number" Text="{Binding PhoneNumber}" PlaceholderColor="Silver" HeightRequest="40" TextColor="Blue"/>
+                        <Entry x:Name="Email" Placeholder="Email" Text="{Binding Email}"  PlaceholderColor="Silver" HeightRequest="40" Keyboard="Email" TextColor="Blue"/>
+                        <Entry x:Name="Employer" Placeholder="Employer" Text="{Binding Employer}" PlaceholderColor="Silver" HeightRequest="40" TextColor="Blue"/>
+                        <Label Text="Date Of Birth"></Label>
+                            <DatePicker  x:Name="DOB" MinimumDate="1/1/1948" MaximumDate="{Binding MaxDOB}" Date="{Binding DOB}" Format="MMMM dd, yyyy" />
+                            <Label Text="{Binding MaxDOB,StringFormat='You picked: {0}'}" />
+                            <Label Text="Gender"/>
+                            <Picker x:Name="Gender" SelectedItem="{Binding Gender}" >
+                                <Picker.Items>
+                                    <x:String>Female</x:String>
+                                    <x:String>Male</x:String>
+                                </Picker.Items>
+                            </Picker>
+
+
+                            <StackLayout Orientation="Horizontal">
+                            <Label Text="Receive Notifications?"></Label>
+                            <Switch x:Name="ConsentStatus" IsToggled="{Binding ConsentStatus, Mode=TwoWay}" Toggled="ConsentStatus_Toggled" />
+                        </StackLayout>
+                        <Label Text="{Binding RegistrationMessage}" />
+                    </StackLayout>
+                <Button Command="{Binding RegisterCommand}" Text="Register" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                </StackLayout>
+
+            </Frame>
+        </ScrollView>
+
+            <StackLayout HeightRequest="40" VerticalOptions="End">
+                <ActivityIndicator IsRunning="{Binding IsBusy}"
+                         IsVisible="{Binding IsBusy}"
+                          HeightRequest="40"
+                          VerticalOptions="CenterAndExpand"
+                          HorizontalOptions="CenterAndExpand">
+                    <ActivityIndicator.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="100" Android="100" WinPhone="400" />
+                    </ActivityIndicator.WidthRequest>
+                    <ActivityIndicator.Color>
+                        <OnPlatform x:TypeArguments="Color"
+                      iOS="#2499CE" WinPhone="#2499CE" />
+                    </ActivityIndicator.Color>
+                </ActivityIndicator>
+            </StackLayout>
+        </StackLayout>-->
+
+    </ContentPage.Content>
+
+    <!--<ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="5">
+            <StackLayout Orientation="Vertical">
+                <Entry Placeholder="First Name"></Entry>
+                <Entry Placeholder="Last Name"></Entry>
+            </StackLayout>
+            <Entry Placeholder="Email"></Entry>
+            <Entry Placeholder="Password" IsPassword="True"></Entry>
+            <Entry Placeholder="Confirm Password" IsPassword="True"></Entry>
+            <Label Text="Date Of Birth"></Label>
+            <DatePicker></DatePicker>
+            <Label Text="Address"></Label>
+            <Editor></Editor>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Save Password"></Label>
+                <Switch IsToggled="False"></Switch>
+            </StackLayout>
+            <Button Text="Sign Up"></Button>
+            <Label Text="Already have account? Sign In" TextColor="Blue"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="This app is written in C# and native APIs using the" />
+                                <Span Text=" " />
+                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
+                                <Span Text="." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="It shares code with its" />
+                                <Span Text=" " />
+                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
+                                <Span Text=" " />
+                                <Span Text="versions." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Margin="0,10,0,0" Text="Learn more" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid> -->
+</ContentPage>

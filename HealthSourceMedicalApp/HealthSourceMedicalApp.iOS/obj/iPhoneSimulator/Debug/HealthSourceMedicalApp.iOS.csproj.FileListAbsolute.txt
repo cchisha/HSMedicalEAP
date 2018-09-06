@@ -1,0 +1,7 @@
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\Chisha\source\repos\HealthSourceMedicalApp\HealthSourceMedicalApp\HealthSourceMedicalApp.iOS\obj\iPhoneSimulator\Debug\HealthSourceMedicalApp.iOS.csproj.CoreCompileInputs.cache

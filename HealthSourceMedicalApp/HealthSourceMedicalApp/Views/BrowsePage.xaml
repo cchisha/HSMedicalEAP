@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthSourceMedicalApp.Views.BrowsePage"
+              Title="{Binding Title}"
+             x:Name="BrowseContentPage" NavigationPage.HasNavigationBar="false">
+    <!--<ContentPage.ToolbarItems >
+         <ToolbarItem Text="Refresh" Clicked="RefreshClicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Back" Clicked="BackClicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Forward" Clicked="ForwardClicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+       <ToolbarItem Order="Primary" Priority="1" Command="{Binding CloseCommand}"
+                     Icon="{markupExtensions:PlatformImage SourceImage='refresh'}" /> 
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <WebView x:Name="Browser"
+                  HeightRequest="1000"
+                  WidthRequest="1000"
+                  Navigating="WebOnNavigating"
+                  Navigated="WebOnEndNavigating" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Padding="10" AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                <Label Text="Loading..." IsVisible="{Binding IsBusy}" Margin="3,3" FontSize="Small" XAlign="Center"/>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="#ce3a2a" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
